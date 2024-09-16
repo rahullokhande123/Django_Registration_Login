@@ -1,12 +1,13 @@
 <h1>Registation Page</h1>
-<form action="registerdata" method="post">
+<form action="{% url 'registerdata' %}" method="post">
+   
     Name:<input type="text" name="name" />
     <br>
     Email:<input type="email" name="email" />
     <br>
-    Contact:<input type="number" name="contact" />
+    Contact:<input type="tel" name="contact" />
     <br>
-    Password:<input type="text" name="password" />
+    Password:<input type="password" name="password" />
     <br>
     <button type="submit">Submit</button>
 </form>

@@ -8,4 +8,9 @@ def register(request):
 def login(request):
     return render(request,'login.html')
 def registerdata(request):
-    print("register dat")
+    print(request.method)
+   
+
+
+
+   
