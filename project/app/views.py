@@ -8,7 +8,7 @@ def register(request):
 def login(request):
     return render(request,'login.html')
 def registerdata(request):
-   
+    print(request.method)
    
 
 
