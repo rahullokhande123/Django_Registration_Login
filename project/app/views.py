@@ -18,7 +18,17 @@ def login(request):
         password1=request.COOKIES['password']
         # print(name,email,contact,password)
         if email1==email:
-           
+            if password1==password:
+                data={
+                    'name1':name1,
+                    'email1':email1,
+                    'contact1':contact1,
+                    'password1':password1
+                }
+                return render(request,'deshbord.html',data)
+            else:
+                msg="email and password not match"
+                return render(request,'login.html',{'msg':msg}) 
         else:
             msg='email id not registerd'
         return render(request,'login.html',{'msg':msg})
