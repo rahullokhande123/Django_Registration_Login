@@ -1,13 +1,24 @@
-<h1>Registation Page</h1>
-<form action="{% url 'registerdata' %}" method="post">
+<h1 align="center" style="margin: 10px; margin-top: 20px;">Registation Page</h1>
+<form align="center" style="margin: 10px;" action="{% url 'registerdata' %}" method="post">
     {% csrf_token %}
-    Name:<input type="text" name="name" />
+    <div style="margin-bottom: 8px; margin-top: 20px;">
+        Name:<input type="text" name="name" />
+    </div>
+    
     <br>
-    Email:<input type="email" name="email" />
+    <div style="margin-bottom: 8px;">
+        Email:<input type="email" name="email" />
+    </div>
+    
     <br>
-    Contact:<input type="tel" name="contact" />
+    <div style="margin-bottom: 8px;">
+        Contact:<input type="tel" name="contact" />
+    </div>
+    
     <br>
-    Password:<input type="password" name="password" />
+    <div style="margin-bottom: 8px;">
+        Password:<input type="password" name="password" />
+    </div>
     <br>
-    <button type="submit">Submit</button>
+    <button style="background-color: brown; color: white; font-size: 20px;" type="submit">Submit</button>
 </form>

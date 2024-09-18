@@ -5,20 +5,29 @@ def home(request):
     return render(request,'home.html')
 def register(request):
     return render(request,'register.html')
+
+
 def login(request):
-    return render(request,'login.html')
+    if request.method=='POST':
+        email=request.POST.get('email')
+        password=request.POST.get('password')
+        # print(email,password)
+        name1=request.COOKIES['name']
+        email1=request.COOKIES['email']
+        contact1=request.COOKIES['contact']
+        password1=request.COOKIES['password']
+        # print(name,email,contact,password)
+        
+    else:
+        return render(request,'login.html')
+
 def registerdata(request):
     print(request.method)
     print(request.POST)
 
-    cstoken=request.POST.get('csrfmiddlewaretoken')
-    name=request.POST.get('name')
-    email=request.POST.get('email')
-    contact=request.POST.get('contact')
-    password=request.POST.get('password')
+  
 
-    print(cstoken)
-    print(name)
-    print(email)
-    print(contact)
-    print(password)
+
+ 
+
+        
