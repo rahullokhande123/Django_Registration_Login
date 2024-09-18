@@ -45,6 +45,11 @@ def registerdata(request):
     contact=request.POST.get('contact')
     password=request.POST.get('password')
 
+    print(cstoken)
+    print(name)
+    print(email)
+    print(contact)
+    print(password)
 
  
 
