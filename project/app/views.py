@@ -17,7 +17,11 @@ def login(request):
         contact1=request.COOKIES['contact']
         password1=request.COOKIES['password']
         # print(name,email,contact,password)
-        
+        if email1==email:
+           
+        else:
+            msg='email id not registerd'
+        return render(request,'login.html',{'msg':msg})
     else:
         return render(request,'login.html')
 
