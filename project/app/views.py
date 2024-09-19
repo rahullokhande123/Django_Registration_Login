@@ -20,10 +20,10 @@ def login(request):
         if email1==email:
             if password1==password:
                 data={
-                    'name1':name1,
-                    'email1':email1,
-                    'contact1':contact1,
-                    'password1':password1
+                    'nm':name1,
+                    'em':email1,
+                    'con':contact1,
+                    'pas':password1
                 }
                 return render(request,'deshbord.html',data)
             else:
@@ -57,5 +57,36 @@ def registerdata(request):
     response.set_cookie('contact',contact)
     response.set_cookie('password',password)
     return response
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # cstoken=request.POST.get('csrfmiddlewaretoken')
+    # name=request.POST.get('name')
+    # email=request.POST.get('email')
+    # contact=request.POST.get('contact')
+    # password=request.POST.get('password')
+
+    # print(cstoken)
+    # print(name)
+    # print(email)
+    # print(contact)
+    # print(password)
+
+    # response=render(request,'login.html')
+    # response.set_cookie('name',name)
+    # response.set_cookie('email',email)
+    # response.set_cookie('contact',contact)
+    # response.set_cookie('password',password)
+    # return response
 
         
