@@ -46,6 +46,10 @@ def registerdata=(request):
     password=request.PO.get('password')
 
     print(cstoken)
+    print(name)
+    print(email)
+    print(contact)
+    print(password)
 
 
 
