@@ -35,28 +35,40 @@ def login(request):
     else:
         return render(request,'login.html')
 
-def registerdata(request):
+def registerdata=(request):
     print(request.method)
     print(request.POST)
 
-    cstoken=request.POST.get('csrfmiddlewaretoken')
-    name=request.POST.get('name')
-    email=request.POST.get('email')
-    contact=request.POST.get('contact')
-    password=request.POST.get('password')
 
-    print(cstoken)
-    print(name)
-    print(email)
-    print(contact)
-    print(password)
 
-    response=render(request,'login.html')
-    response.set_cookie('name',name)
-    response.set_cookie('email',email)
-    response.set_cookie('contact',contact)
-    response.set_cookie('password',password)
-    return response
+
+
+
+
+
+
+# def registerdata(request):
+#     print(request.method)
+#     print(request.POST)
+
+#     cstoken=request.POST.get('csrfmiddlewaretoken')
+#     name=request.POST.get('name')
+#     email=request.POST.get('email')
+#     contact=request.POST.get('contact')
+#     password=request.POST.get('password')
+
+#     print(cstoken)
+#     print(name)
+#     print(email)
+#     print(contact)
+#     print(password)
+
+#     response=render(request,'login.html')
+#     response.set_cookie('name',name)
+#     response.set_cookie('email',email)
+#     response.set_cookie('contact',contact)
+#     response.set_cookie('password',password)
+#     return response
 
  
 
