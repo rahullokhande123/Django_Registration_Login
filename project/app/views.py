@@ -45,7 +45,7 @@ def registerdata=(request):
     contact=request.POST.get('contact')
     password=request.PO.get('password')
 
-    
+    print(cstoken)
 
 
 
