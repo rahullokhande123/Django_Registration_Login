@@ -1,6 +1,10 @@
-<a style="text-decoration: none;" href="{% url 'register' %}">Register</a>
+<div align='center'>
+    <a style="text-decoration: none;font-size: 25px;" href="{% url 'register' %}">Register</a>
+</div>
 <hr/>
-<form action="{% url 'login' %}" >
-    {% csrf_token %}
-    <button type="submit">Login</button>
-</form>
+<div align='center'>
+    <form action="{% url 'login' %}" >
+        {% csrf_token %}
+        <button type="submit">Login</button>
+    </form>
+</div>
