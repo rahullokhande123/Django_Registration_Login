@@ -10,7 +10,12 @@ def register(request):
         email=request.POST.get('email')
         contact=request.POST.get('contact')
         password=request.POST.get('password')
-       
+        data={
+            'name':name,
+            'email':email,
+            'contact':contact,
+            'password':password
+        }
         
    
 
