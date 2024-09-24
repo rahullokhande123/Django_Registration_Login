@@ -10,6 +10,7 @@ def register(request):
         email=request.POST.get('email')
         contact=request.POST.get('contact')
         password=request.POST.get('password')
+        print(name,email,contact,password)
         data={
             'name':name,
             'email':email,
@@ -20,9 +21,6 @@ def register(request):
         return render(request,'login.html')
     else:
         return render(request,'register.html')
-
-    
-
 
 def login(request):
     # if request.method=='POST':
@@ -61,35 +59,35 @@ def login(request):
     else:
         return render(request,'login.html')
 
-def registerdata(request):
-    print(request.method)
-    print(request.POST)
+# def registerdata(request):
+#     print(request.method)
+#     print(request.POST)
 
-    cstoken=request.POST.get('csrfmiddlewaretoken')
-    name=request.POST.get('name')
-    email=request.POST.get('email')
-    contact=request.POST.get('contact')
-    password=request.POST.get('password')
+#     cstoken=request.POST.get('csrfmiddlewaretoken')
+#     name=request.POST.get('name')
+#     email=request.POST.get('email')
+#     contact=request.POST.get('contact')
+#     password=request.POST.get('password')
 
-    print(cstoken)
-    print(name)
-    print(email)
-    print(contact)
-    print(password)
+#     print(cstoken)
+#     print(name)
+#     print(email)
+#     print(contact)
+#     print(password)
 
-    response=render(request,'login.html')
-    response.set_cookie('name',name)
-    response.set_cookie('email',email)
-    response.set_cookie('contact',contact)
-    response.set_cookie("password",password)
-    return response
-def logout(request):
-    response=render(request,'home.html')
-    response.delete_cookie('name')
-    response.delete_cookie('contact')
-    response.delete_cookie('email')
-    response.delete_cookie('password')
-    return response
+#     response=render(request,'login.html')
+#     response.set_cookie('name',name)
+#     response.set_cookie('email',email)
+#     response.set_cookie('contact',contact)
+#     response.set_cookie("password",password)
+#     return response
+# def logout(request):
+#     response=render(request,'home.html')
+#     response.delete_cookie('name')
+#     response.delete_cookie('contact')
+#     response.delete_cookie('email')
+#     response.delete_cookie('password')
+#     return response
 
  
 
