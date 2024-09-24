@@ -58,7 +58,8 @@ def login(request):
         data1=request.session.get('data')
         print(data1)
         print(data1["name"],data1["email"],data1["contact"],data1["password"])
-    
+    else:
+        return render(request,'login.html')
 
 def registerdata(request):
     print(request.method)
