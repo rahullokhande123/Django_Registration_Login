@@ -57,7 +57,7 @@ def login(request):
         password=request.POST['password']
         data1=request.session.get('data')
         print(data1)
-        
+        print(data1["name"],data1["email"],data1["contact"],data1["password"])
     
 
 def registerdata(request):
