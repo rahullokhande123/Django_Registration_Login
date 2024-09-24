@@ -18,7 +18,8 @@ def register(request):
         }
         request.session['data']=data
         return render(request,'login.html')
-   
+    else:
+        return render(request,'register.html')
 
     
 
