@@ -56,7 +56,7 @@ def login(request):
         email=request.POST['email']
         password=request.POST['password']
         data1=request.session.get('data')
-        
+        print(data1)
         
     
 
