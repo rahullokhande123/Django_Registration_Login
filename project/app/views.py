@@ -77,7 +77,7 @@ def registerdata(request):
     print(contact)
     print(password)
 
-    response=render(request,'login.html')  
+    response=render(request,'login.html')
     response.set_cookie('name',name)
     response.set_cookie('email',email)
     response.set_cookie('contact',contact)
