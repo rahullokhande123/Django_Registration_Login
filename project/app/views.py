@@ -6,7 +6,10 @@ def home(request):
 
 def register(request):
     if request.method=='POST':
-        
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        contact=request.POST.get('contact')
+        password=request.POST.get('password')
        
         
    
