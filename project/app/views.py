@@ -16,7 +16,8 @@ def register(request):
             'contact':contact,
             'password':password
         }
-        
+        request.session['data']=data
+        return render(request,'login.html')
    
 
     
