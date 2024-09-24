@@ -51,6 +51,11 @@ def login(request):
     #     return render(request,'login.html',{'msg':msg})
     # else:
     #     return render(request,'login.html')
+
+    if request.method=='POST':
+        email=request.POST['email']
+        password=request.POST['password']
+        data1=request.session.get('data')
         
         
     
