@@ -73,7 +73,7 @@ def login(request):
     if request.method=='POST':
         email=request.POST['email']
         password=request.POST['password']
-        # data1=request.session.get('data')
+        data1=request.session.get('data')
         print(data1)
         print(data1["name"],data1["email"],data1["contact"],data1["password"])
         if data1['email']==email:
