@@ -34,7 +34,6 @@ def register(request):
         #     'password':password
         # }
         # request.session['data']=data
-        request.session['name']=name
         return render(request,'login.html')
     else:
         return render(request,'register.html')
