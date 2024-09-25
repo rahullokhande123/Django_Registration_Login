@@ -27,13 +27,17 @@ def register(request):
         email=request.POST.get('email')
         contact=request.POST.get('contact')
         password=request.POST.get('password')
-        data={
-            'name':name,
-            'email':email,
-            'contact':contact,
-            'password':password
-        }
-        request.session['data']=data
+        # data={
+        #     'name':name,
+        #     'email':email,
+        #     'contact':contact,
+        #     'password':password
+        # }
+        # request.session['data']=data
+        request.session['name']=name
+        request.session['email']=email
+        request.session['contact']=contact
+        request.session['password']=password
         return render(request,'login.html')
     else:
         return render(request,'register.html')
@@ -69,16 +73,20 @@ def login(request):
     if request.method=='POST':
         email=request.POST['email']
         password=request.POST['password']
-        data1=request.session.get('data')
-        print(data1)
-        print(data1["name"],data1["email"],data1["contact"],data1["password"])
-        if data1['email']==email:
-            if data1['password']==password:
+        # data1=request.session.get('data')
+        name1=request.session.get('name')
+        email1=request.session.get('email')
+        contact1=request.session.get('contact')
+        password1=request.session.get('password')
+        # print(data1)
+        # print(data1["name"],data1["email"],data1["contact"],data1["password"])
+        if email1==email:
+            if password1==password:
                 my_data={
-                    'nm':data1['name'],
-                    'em':data1['email'],
-                    'con':data1['contact'],
-                    'pas':data1['password']
+                    'nm':name1,
+                    'em':enumerate,
+                    'con':contact1,
+                    'pas':password1
                 }
                 return render(request,'deshbord.html',my_data)
             else:
