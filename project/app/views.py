@@ -27,13 +27,13 @@ def register(request):
         email=request.POST.get('email')
         contact=request.POST.get('contact')
         password=request.POST.get('password')
-        # data={
-        #     'name':name,
-        #     'email':email,
-        #     'contact':contact,
-        #     'password':password
-        # }
-        # request.session['data']=data
+        data={
+            'name':name,
+            'email':email,
+            'contact':contact,
+            'password':password
+        }
+        request.session['data']=data
         return render(request,'login.html')
     else:
         return render(request,'register.html')
