@@ -81,12 +81,12 @@ def login(request):
         # print(data1)
         # print(data1["name"],data1["email"],data1["contact"],data1["password"])
         if email1==email:
-            if password1==password:
+            if data1['password']==password:
                 my_data={
-                    'nm':name1,
-                    'em':enumerate,
-                    'con':contact1,
-                    'pas':password1
+                    'nm':data1['name'],
+                    'em':data1['email'],
+                    'con':data1['contact'],
+                    'pas':data1['password']
                 }
                 return render(request,'deshbord.html',my_data)
             else:
