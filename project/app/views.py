@@ -37,7 +37,6 @@ def register(request):
         request.session['name']=name
         request.session['email']=email
         request.session['contact']=contact
-        request.session['password']=password
         return render(request,'login.html')
     else:
         return render(request,'register.html')
