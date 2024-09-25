@@ -74,8 +74,6 @@ def login(request):
         email=request.POST['email']
         password=request.POST['password']
         # data1=request.session.get('data')
-        name=request.session.get('name')
-        
         print(data1)
         print(data1["name"],data1["email"],data1["contact"],data1["password"])
         if data1['email']==email:
