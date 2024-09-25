@@ -78,8 +78,8 @@ def login(request):
         email1=request.session.get('email')
         contact1=request.session.get('contact')
         password1=request.session.get('password')
-        # print(data1)
-        # print(data1["name"],data1["email"],data1["contact"],data1["password"])
+        print(data1)
+        print(data1["name"],data1["email"],data1["contact"],data1["password"])
         if data1['email']==email:
             if data1['password']==password:
                 my_data={
