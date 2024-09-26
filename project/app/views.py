@@ -5,23 +5,6 @@ def home(request):
     return render(request,'home.html')
 
 def register(request):
-    # if request.method=='POST':
-    #     name=request.POST.get('name')
-    #     email=request.POST.get('email')
-    #     contact=request.POST.get('contact')
-    #     password=request.POST.get('password')
-    #     print(name,email,contact,password)
-    #     data={
-    #         'name':name,
-    #         'email':email,
-    #         'contact':contact,
-    #         'password':password
-    #     }
-    #     request.session['data']=data
-    #     return render(request,'login.html')
-    # else:
-    #     return render(request,'register.html')
-
     if request.method=='POST':
         name=request.POST.get('name')
         email=request.POST.get('email')
@@ -39,8 +22,7 @@ def register(request):
         return render(request,'register.html')
 
 def login(request):
-    if request.method=='POST':
-        
+    if request.method=='POST': 
         data1=request.session.get('data')
         print(data1)
         email=request.POST.get('email','guest')
