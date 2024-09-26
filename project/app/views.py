@@ -50,12 +50,6 @@ def login(request):
         return render(request,'login.html')
 
 def logout(request):
-    # response=render(request,'home.html')
-    # response.delete_cookie('name')
-    # response.delete_cookie('contact')
-    # response.delete_cookie('email')
-    # response.delete_cookie('password')
-    # return response
     if request.session:
         request.session.flush()
         return render(request,'home.html')
