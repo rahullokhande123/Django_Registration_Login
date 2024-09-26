@@ -67,12 +67,16 @@ def login(request):
     #     return render(request,'login.html')
 
     if request.method=='POST':
-        email=request.POST['email']
-        password=request.POST['password']
+        
         data1=request.session.get('data')
         print(data1)
-        print(data1["name"],data1["email"],data1["contact"],data1["password"])
-        if data1['email']==email:
+        email=request.POST.get('email','guest')
+        password=request.POST['password']
+        print(email)
+        if data1== None:
+            msg = "Session Not Register Please Register First"
+            return render(request,'login.html',{"msg":msg})
+        elif email == data1['email']:
             if data1['password']==password:
                 my_data={
                     'nm':data1['name'],
@@ -112,13 +116,19 @@ def login(request):
 #     response.set_cookie('contact',contact)
 #     response.set_cookie("password",password)
 #     return response
-# def logout(request):
-#     response=render(request,'home.html')
-#     response.delete_cookie('name')
-#     response.delete_cookie('contact')
-#     response.delete_cookie('email')
-#     response.delete_cookie('password')
-#     return response
+def logout(request):
+    # response=render(request,'home.html')
+    # response.delete_cookie('name')
+    # response.delete_cookie('contact')
+    # response.delete_cookie('email')
+    # response.delete_cookie('password')
+    # return response
+    if request.session:
+        request.session.flush()
+        return render(request,'home.html')
+    else:
+        msg="Session Data Not Found"
+        return render (request, 'login.html')
 
  
 
