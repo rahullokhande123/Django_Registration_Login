@@ -53,9 +53,6 @@ def logout(request):
     if request.session:
         request.session.flush()
         return render(request,'home.html')
-    else:
-        msg="Session Data Not Found"
-        return render (request, 'login.html')
 
  
 
